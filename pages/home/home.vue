@@ -1,5 +1,10 @@
 <template>
 	<view>
+		<!-- 搜索组件 -->
+		<view class="search-box">
+			<my-search @click="gotoSearch"></my-search>
+		</view>
+		<!-- 轮播图区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 			<swiper-item v-for="(item,index) in swiperList" :key="index">
 				<navigator class="swiper-item" :url="`/subpkg/goods_detail/goods_detail?goods_id=${item.goods_id}`">
@@ -7,11 +12,13 @@
 				</navigator>
 			</swiper-item>
 		</swiper>
+		<!-- 分类导航区域 -->
 		<view class="navlist">
 			<view v-for="(item,index) in navList" :key="index" @click="navClickHandler(item)">
 				<image :src="item.image_src" mode="" class="navitem"></image>
 			</view>
 		</view>
+		<!-- 楼层区域 -->
 		<view class="floor-list">
 			<view class="floor-item" v-for="(item,index) in floorList" :key="index">
 				<image :src="item.floor_title.image_src" mode="" class="floor-title"></image>
@@ -53,6 +60,12 @@
 			this.getfloorList()
 		},
 		methods: {
+			//跳转到搜索页面
+			gotoSearch() {
+				uni.navigateTo({
+					url: '/subpkg/search/search'
+				})
+			},
 			// 获取轮播图数据
 			async getSwiperList() {
 				const {
@@ -101,6 +114,12 @@
 </script>
 
 <style lang="scss">
+	.search-box {
+		position: sticky;
+		top: 0%;
+		z-index: 999;
+	}
+
 	swiper {
 		height: 330rpx;
 

@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<my-search></my-search>
 		<view class="scroll-view-container">
 			<!-- 左侧滑动区域 -->
 			<scroll-view scroll-y="true" :style="{height: wh+'px'}" class="scroll-left">
@@ -69,7 +70,8 @@
 		},
 		onLoad() {
 			const sysInfo = uni.getSystemInfoSync()
-			this.wh = sysInfo.windowHeight
+			// 减去搜索区域的50px
+			this.wh = sysInfo.windowHeight - 50
 			this.getcateList()
 		}
 	}
