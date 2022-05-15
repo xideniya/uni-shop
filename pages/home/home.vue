@@ -5,10 +5,11 @@
 			<my-search @click="gotoSearch"></my-search>
 		</view>
 		<!-- 轮播图区域 -->
-		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
+		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true"
+			class="swiper-box">
 			<swiper-item v-for="(item,index) in swiperList" :key="index">
 				<navigator class="swiper-item" :url="`/subpkg/goods_detail/goods_detail?goods_id=${item.goods_id}`">
-					<image :src="item.image_src" mode=""></image>
+					<image :src="item.image_src" mode="" class="swiper-image"></image>
 				</navigator>
 			</swiper-item>
 		</swiper>
@@ -120,11 +121,11 @@
 		z-index: 999;
 	}
 
-	swiper {
+	.swiper-box {
 		height: 330rpx;
 
 		.swiper-item,
-		image {
+		.swiper-image {
 			width: 100%;
 			height: 100%;
 		}
