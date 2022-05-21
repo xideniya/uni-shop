@@ -117,6 +117,10 @@
 </script>
 
 <style lang="scss">
+	page {
+		background-color: #fff;
+	}
+
 	.search-box {
 		position: sticky;
 		top: 0%;

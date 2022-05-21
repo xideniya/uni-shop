@@ -58,8 +58,12 @@
 </script>
 
 <style lang="scss">
-	.cart-container {
+	page {
 		background-color: #fff;
+	}
+
+	.cart-container {
+
 		padding-bottom: 50px;
 	}
 
