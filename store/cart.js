@@ -9,7 +9,7 @@ export default {
 			if (!findresult) {
 				state.cart.push(goods)
 			} else {
-				// 这里就反应出 fine() 方法返回的结果内存指向依然是 cart 所指向的内存地址
+				// 这里就反应出 find() 方法返回的结果内存指向依然是 cart 所指向的内存地址
 				// 所有这里返回的是浅拷贝的数据
 				findresult.goods_count++
 			}

@@ -20,7 +20,7 @@
 					<view class="content">
 						<view class="img" v-for="(item3,index) in item2.children" :key="index"
 							@click="goGoodsList(item3)">
-							<image :src="item3.cat_icon" mode=""></image>
+							<image :src="item3.cat_icon.replace('dev','web')" mode=""></image>
 							<text class="">
 								{{item3.cat_name}}
 							</text>
